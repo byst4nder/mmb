@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/couponproduct.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+    <div id="ctl00_headerApp" class="head">
+        <div class="back">
+            <a href="index.html" class="icon-back"></a>
+        </div>
+        <h1>   			
+					肯德基优惠券
+				</h1>
+        <div class="home">
+            <a href="http://m.manmanbuy.com/?o=download" onclick="trackEvent('header部下载');" class="icon-app"></a>
+        </div>
+    </div>
+    <main class="">
+        <div style="font-size:12px; text-align:center; color:#999; margin:8px 0px;">
+            --点餐前出示手机中的优惠券，即可享受优惠--
+        </div>
+        <div class="coupon-list">
+        </div>
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="login.aspx.htm">登录</a>
+            <a href="login.aspx.htm">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部</a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:if(confirm(%27http://m.manmanbuy.com/download/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent('footer下载');" style="color: Red;">手机APP下载</a> <a href="index.htm" tppabs="http://m.manmanbuy.com/">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                m.manmanbuy.com
+                <img src="https://z11.cnzz.com/stat.htm-id=1256699064&amp;r=&amp;iw=1&amp;showp=0x0&amp;lg=undefined&amp;cnzz_eid=none&amp;p=http---m.manmanbuy.com-&amp;rnd=453668140.gif" width="0" height="0">
+            </p>
+        </div>
+    </footer>
+    <script id="couponList" type="text/html">
+        <ul class="clearfix">
+            {{each result as value i}}
+            <li>
+                <a href="http://d3.5ikfc.com/static/thumbs/1016/kfc-5ikfc-108_pc27.jpg" title=" 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券">
+                    <div class="pic">{{#value.couponProductImg}}</div>
+                    <div class="info">
+                        <div class="tit">
+                            <h3>{{value.couponProductName}}</h3>
+                            <h2>{{value.couponProductPrice}}</h2> </div>
+                        <div class="time">{{value.couponProductTime}}</div>
+                    </div>
+                </a>
+            </li>
+            {{/each}}
+        </ul>
+    </script>
+    <script src="js/template.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    (function($) {
+        $.getUrlParam = function(name) {
+            var reg = new RegExp("(^|&)" +
+                name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })(jQuery);
+    </script>
+    <script src="js/couponproduct.js"></script>
+</body>
+
+</html>

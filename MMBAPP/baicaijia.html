@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet/less" href="css/base.less">
+    <link rel="stylesheet/less" href="css/baicaijia.less">
+    <script src="js/less.js"></script>
+</head>
+
+<body>
+    <div id="ctl00_headerApp" class="head">
+        <div class="back">
+            <a href="index.html" class="icon-back"></a>
+        </div>
+        <h1>   			
+					
+   白菜价-淘宝内部券
+				</h1>
+        <div class="home">
+            <a href="http://m.manmanbuy.com/?o=download" onclick="trackEvent('header部下载');" class="icon-app"></a>
+        </div>
+    </div>
+    <main class="coupon-title">
+        <div class="bcj-head-cat">
+            <div class="bcj-title">
+            </div>
+            <div class="searchbtn">
+                <div class="icon-search">
+                </div>
+            </div>
+            <div class="searchbox" style="width: 375px; display: none;">
+                <div class="formsch clearfix">
+                    <form method="get" action="baicai.aspx">
+                        <div class="txt">
+                            <input type="search" name="key" value="" onfocus="delInput();" oninput="delInput();" class="border-img" placeholder="请输入搜索关键词" style="width: 317px;">
+                            <a href="javascript:;" class="a-delput"></a>
+                        </div>
+                        <div class="smt">
+                            <input type="submit" value="搜索">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bcj-list">
+        </div>
+    </main>
+    <footer id="ctl00_foot">
+        <div class="foot_top">
+            <a href="login.aspx.htm">登录</a>
+            <a href="login.aspx.htm">注册</a>
+            <a href="#" style="width: 40%; border: 0;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">返回顶部</a>
+        </div>
+        <div class="footer">
+            <p>
+                <a href="javascript:if(confirm(%27http://m.manmanbuy.com/download/  \n\nThis file was not retrieved by Teleport Ultra, because it was unavailable, or its retrieval was aborted, or the project was stopped too soon.  \n\nDo you want to open it from the server?%27))window.location=%27http://m.manmanbuy.com/download/%27" onclick="trackEvent('footer下载');" style="color: Red;">手机APP下载</a> <a href="index.htm" tppabs="http://m.manmanbuy.com/">
+                    慢慢买手机版</a> -- 掌上比价平台</p>
+            <p>
+                m.manmanbuy.com
+                <img src="https://z11.cnzz.com/stat.htm-id=1256699064&amp;r=&amp;iw=1&amp;showp=0x0&amp;lg=undefined&amp;cnzz_eid=none&amp;p=http---m.manmanbuy.com-&amp;rnd=453668140.gif" width="0" height="0">
+            </p>
+        </div>
+    </footer>
+    <script id="bcjTitle" type="text/html">
+        <div class="ul-wapper">
+            <ul class="tabs clearfix">
+                {{each result as value i}}
+                <li class=""><a href="baicaijia.html?titleid={{value.titleId}}">{{value.title}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+    </script>
+    <script id="bcjProductList" type="text/html">
+        <ul class="clearfix">
+            {{each result as value i}}
+            <li class="ui-border-tb ">
+                <a biz-itemid="538754112089" class="gobuy" isconvert="1" href="http://s.click.taobao.com/lkqGHQx" target="_blank"></a>
+                <div class="pic"><i></i>{{#value.productImg}}</div>
+                <div class="inf">
+                    <div class="i">
+                        <div class="t">{{#value.productName}}</div>
+                        <div class="pr">{{#value.productPrice}}
+                        </div>
+                    </div>
+                    <div class="o">
+                        {{#value.productCouponRemain}}
+                        <div class="b clearfix">
+                            <div class="q">{{#value.productCoupon}}</div>
+                            <div class="g">{{#value.productHref}}</div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+        <a class="gotop" id="gotop" href="#" style="display: inline-block;"></a>
+    </script>
+    <script src="js/template.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+    (function($) {
+        $.getUrlParam = function(name) {
+            var reg = new RegExp("(^|&)" +
+                name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]);
+            return null;
+        }
+    })(jQuery);
+    </script>
+    <script src="js/baicaijia.js"></script>
+</body>
+
+</html>
